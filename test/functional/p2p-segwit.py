@@ -674,7 +674,7 @@ class SegWitTest(BitcoinTestFramework):
         assert(len(self.utxo))
         MAX_PROGRAM_LENGTH = 10000
 
-        # This program is 19 max pushes (9937 bytes), then 64 more opcode-bytes.
+        # This program is 19 max pushes (9??? bytes), then 64 more opcode-bytes.
         long_witness_program = CScript([b'a'*520]*19 + [OP_DROP]*63 + [OP_TRUE])
         assert(len(long_witness_program) == MAX_PROGRAM_LENGTH+1)
         long_witness_hash = sha256(long_witness_program)
