@@ -144,30 +144,17 @@ public:
         pchMessageStart[1] = 0xdf;
         pchMessageStart[2] = 0xa7;
         pchMessageStart[3] = 0xcc;
-        nDefaultPort = 9333;
+        nDefaultPort = 9937;
         nPruneAfterHeight = 100000;
 
         genesis = CreateGenesisBlock(TZERO, 924727, 0x1e0ffff0, 1, 50 * COIN);
         //genesis = mineGenesisBlock(TZERO, NBITS_G, 1, 50 * COIN);
 
-        // consensus.hashGenesisBlock = uint256S("0x01");
-        // if (genesis.GetHash() != consensus.hashGenesisBlock)
-        // {
-        //     LogPrintf("recalculating params for mainnet.\n");
-        //     LogPrintf("old mainnet genesis nonce: %d\n", genesis.nNonce);
-        //     LogPrintf("old mainnet genesis hash:  %s\n", consensus.hashGenesisBlock.GetHex());
-        //     // deliberately empty for loop finds nonce value.
-        //     for (genesis.nNonce = 0; UintToArith256(consensus.powLimit) < UintToArith256(genesis.GetHash()); genesis.nNonce++) { } 
-        //     LogPrintf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.GetHex());
-        //     LogPrintf("new mainnet genesis nonce: %d\n", genesis.nNonce);
-        //     LogPrintf("new mainnet genesis hash: %s\n", genesis.GetHash().GetHex());
-        // }
-
         consensus.hashGenesisBlock = genesis.GetHash();
-        std::cout << "GH:" << genesis.GetHash().GetHex() << std::endl;
-        std::cout << "Gh:" << consensus.hashGenesisBlock.GetHex() << std::endl;
-        std::cout << "GM:" << genesis.hashMerkleRoot.GetHex() << std::endl;
-        std::cout << "N:" << genesis.nNonce << std::endl;
+        // std::cout << "GH:" << genesis.GetHash().GetHex() << std::endl;
+        // std::cout << "Gh:" << consensus.hashGenesisBlock.GetHex() << std::endl;
+        // std::cout << "GM:" << genesis.hashMerkleRoot.GetHex() << std::endl;
+        // std::cout << "N:" << genesis.nNonce << std::endl;
         assert(consensus.hashGenesisBlock == uint256S("08ccdfeb12136edad13ad133e691765ee027097ba718cb377f3db9291a671993"));
         assert(genesis.hashMerkleRoot == uint256S("01e25b502c6c1248b8b677e523c7ab7b29f74075ff7abc2ba4779a228c01ff09"));
 
@@ -257,9 +244,8 @@ public:
         genesis = CreateGenesisBlock(TZERO, 924727, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        //std::cout << consensus.powLimit.GetUint64(3) << std::endl;
-        std::cout << "GH:" << genesis.GetHash().GetHex() << std::endl;
-        std::cout << "GM:" << genesis.hashMerkleRoot.GetHex() << std::endl;
+        // std::cout << "GH:" << genesis.GetHash().GetHex() << std::endl;
+        // std::cout << "GM:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         assert(consensus.hashGenesisBlock == uint256S("08ccdfeb12136edad13ad133e691765ee027097ba718cb377f3db9291a671993"));
         assert(genesis.hashMerkleRoot == uint256S("0x01e25b502c6c1248b8b677e523c7ab7b29f74075ff7abc2ba4779a228c01ff09"));
 
