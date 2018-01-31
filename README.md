@@ -1,3 +1,11 @@
+Leeds Blockchain Crypto Coin
+============================
+This is a fork of litecoin, which is itself a fork of bitcoin, and is for *educational purposes only*.
+
+A new genesis block was created on 29 Jan 2018 with the help of the [GenesisH0](https://github.com/lhartikk/GenesisH0) script.
+
+The original README follows...
+
 Litecoin Core integration/staging tree
 =====================================
 
