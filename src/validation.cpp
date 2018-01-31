@@ -1046,9 +1046,15 @@ bool IsInitialBlockDownload()
     if (fImporting || fReindex)
         return true;
     if (chainActive.Tip() == nullptr)
+    {
+        LogPrintf("IsInitialBlockDownload: chainActive.Tip() == nullptr\n");
         return true;
+    }
     if (chainActive.Tip()->nChainWork < UintToArith256(chainParams.GetConsensus().nMinimumChainWork))
+    {
+        LogPrintf("IsInitialBlockDownload: chainActive.Tip()->nChainWork = %s\n", chainActive.Tip()->nChainWork.GetHex());
         return true;
+    }
     if (chainActive.Tip()->GetBlockTime() < (GetTime() - nMaxTipAge))
         return true;
     LogPrintf("Leaving InitialBlockDownload (latching to false)\n");
