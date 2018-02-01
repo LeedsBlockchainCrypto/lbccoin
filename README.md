@@ -1,10 +1,14 @@
-Leeds Blockchain Crypto Coin
-============================
-This is a fork of litecoin, which is itself a fork of bitcoin, and is for *educational purposes only*.
+Leeds Blockchain Crypto Coin - LBCcoin
+======================================
+LBC coin is a fork of litecoin, which is itself a fork of bitcoin, and is for *educational purposes only*. This coin is conceptually identical to Litecoin (for now at least) and as such adds no value. 
 
-A new genesis block was created on 29 Jan 2018 with the help of the [GenesisH0](https://github.com/lhartikk/GenesisH0) script.
+The genesis block was created with the help of the [GenesisH0](https://github.com/lhartikk/GenesisH0) script.
 
-The original README follows...
+I'm using [cpuminer](https://github.com/pooler/cpuminer) to mine as the difficulty is currently very low. Please don't point a hefty mining rig at this blockchain - it will just increase the difficulty and exlude people without that kit from the mining experience.
+
+See the `doc/build-*.md` files for build instructions. 
+
+The original Litecoin README follows...
 
 Litecoin Core integration/staging tree
 =====================================
