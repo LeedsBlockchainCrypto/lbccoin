@@ -2,7 +2,7 @@ Leeds Blockchain Crypto Coin - LBCcoin
 ======================================
 LBC coin is a fork of litecoin, which is itself a fork of bitcoin, and is for *educational purposes only*. This coin is conceptually identical to Litecoin (for now at least) and as such adds no value. 
 
-The genesis block was created with the help of the [GenesisH0](https://github.com/lhartikk/GenesisH0) script. It contains the coinbase parameter [Newsthump 29 Jan 2018 Barnsley man outraged by cultural appropriation in Monty Python Yorkshireman sketch](http://newsthump.com/2018/01/28/barnsley-man-outraged-by-cultural-appropriation-in-monty-python-yorkshireman-sketch/)
+The genesis block was created with the help of the [GenesisH0](https://github.com/lhartikk/GenesisH0) script. It contains the coinbase parameter "[Newsthump 29 Jan 2018 Barnsley man outraged by cultural appropriation in Monty Python Yorkshireman sketch](http://newsthump.com/2018/01/28/barnsley-man-outraged-by-cultural-appropriation-in-monty-python-yorkshireman-sketch/)".
 
 I'm using [cpuminer](https://github.com/pooler/cpuminer) to mine as the difficulty is currently very low. Please don't point a hefty mining rig at this blockchain - it will just increase the difficulty and exlude people without that kit from the mining experience.
 
