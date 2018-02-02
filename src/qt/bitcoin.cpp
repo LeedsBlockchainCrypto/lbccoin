@@ -563,7 +563,7 @@ int main(int argc, char *argv[])
 
     // Hack: commented line below to make it build, link error was:
     // /home/az/dev/LBC/lbccoin/src/qt/bitcoin.cpp:564: undefined reference to `qInitResources_bitcoin()'
-    //Q_INIT_RESOURCE(bitcoin);
+    Q_INIT_RESOURCE(bitcoin);
     Q_INIT_RESOURCE(bitcoin_locale);
 
     BitcoinApplication app(argc, argv);
