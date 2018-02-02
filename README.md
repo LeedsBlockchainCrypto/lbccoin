@@ -4,9 +4,19 @@ LBC coin is a fork of litecoin, which is itself a fork of bitcoin, and is for *e
 
 The genesis block was created with the help of the [GenesisH0](https://github.com/lhartikk/GenesisH0) script. It contains the coinbase parameter "[Newsthump 29 Jan 2018 Barnsley man outraged by cultural appropriation in Monty Python Yorkshireman sketch](http://newsthump.com/2018/01/28/barnsley-man-outraged-by-cultural-appropriation-in-monty-python-yorkshireman-sketch/)".
 
-I'm using [cpuminer](https://github.com/pooler/cpuminer) to mine as the difficulty is currently very low. Please don't point a hefty mining rig at this blockchain - it will just increase the difficulty and exlude people without that kit from the mining experience.
+I'm using [cpuminer](https://github.com/pooler/cpuminer) to mine as the difficulty is currently very low. Just like it was in 2011 (not that I'd know). But please don't point a hefty mining rig at this blockchain - it will just increase the difficulty and then exlude people without that kit from the learning experience.
 
-See the `doc/build-*.md` files for build instructions. 
+See the `doc/build-*.md` files for build instructions. We've got this up and running on x64 (linux and osx) and ARM (raspberry pi).
+
+Ports are 9937 and 9936 (RPC). Address prefix is 'Y' for Yorkshire! (e.g. Ykoifcaq22kyB8H5tAJd4RvkfgzPNV1RZ2)
+
+Once you've got your own node running, first sync it with the one running at 139.162.230.135.
+
+Then you'll be able to start mining, see the [litecoind man page](http://manpages.org/litecoinconf/5). E.g. you can connect `cpuminer` (to your own node) like this:
+```
+minerd -a scrypt -o http://127.0.0.1:9936 -O<user>:<pass> --coinbase-addr <address>
+```
+And of course there's a GUI wallet (`lbccoin-qt`) that you can use to generate an address to send mining rewards to.
 
 The original Litecoin README follows...
 
