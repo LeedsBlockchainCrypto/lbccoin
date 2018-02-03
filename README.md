@@ -1,10 +1,10 @@
 Leeds Blockchain Crypto Coin - LBCcoin
 ======================================
-LBC coin is a fork of litecoin, which is itself a fork of bitcoin, and is for *educational purposes only*. This coin is conceptually identical to Litecoin (for now at least) and as such adds no value. 
+LBC coin is a fork of litecoin, which is itself a fork of bitcoin, and is for *educational purposes only*. This coin is conceptually identical to Litecoin (for now at least) and as such adds no value. It's pegged to USD at a rate of $0.00 per LBCcoin.
 
 The genesis block was created with the help of the [GenesisH0](https://github.com/lhartikk/GenesisH0) script. It contains the coinbase parameter "[Newsthump 29 Jan 2018 Barnsley man outraged by cultural appropriation in Monty Python Yorkshireman sketch](http://newsthump.com/2018/01/28/barnsley-man-outraged-by-cultural-appropriation-in-monty-python-yorkshireman-sketch/)".
 
-I'm using [cpuminer](https://github.com/pooler/cpuminer) to mine as the difficulty is currently very low. Just like it was in 2011 (not that I'd know). But please don't point a hefty mining rig at this blockchain - it will just increase the difficulty and then exlude people without that kit from the learning experience.
+I'm using [cpuminer](https://github.com/pooler/cpuminer) to mine as the difficulty is currently very low, so you can pretend it's 2011. But please don't point a hefty mining rig at this blockchain - it will just increase the difficulty and then exlude people without that kit from the learning experience.
 
 See the `doc/build-*.md` files for build instructions. We've got this up and running on x64 (linux and osx) and ARM (raspberry pi).
 
@@ -17,6 +17,8 @@ Then you'll be able to start mining, see the [litecoind man page](http://manpage
 minerd -a scrypt -o http://127.0.0.1:9936 -O<user>:<pass> --coinbase-addr <address>
 ```
 And of course there's a GUI wallet (`lbccoin-qt`) that you can use to generate an address to send mining rewards to.
+
+The reg tests are broken and I've not even tried testnet. See [issues](https://github.com/LeedsBlockchainCrypto/lbccoin/issues). Contributions welcome via PR. 
 
 The original Litecoin README follows...
 
