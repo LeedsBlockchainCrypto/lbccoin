@@ -15,11 +15,15 @@
 
 #include "chainparamsseeds.h"
 
+// Genesis block mined using the GenesisH0 script see https://github.com/lhartikk/GenesisH0
+// 
+
 namespace {
 
-const uint32_t TZERO = 1517258754;
+const uint32_t TZERO = 1529915280;
 const uint32_t NBITS = 486604799;   // 0x1d00ffff
 const uint32_t NBITS_G = 504365040; // 0x1e0ffff0
+const uint32_t GNONCE = 841680;
 
 CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
@@ -55,7 +59,7 @@ CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutput
  */
 CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Newsthump 29 Jan 2018 Barnsley man outraged by cultural appropriation in Monty Python Yorkshireman sketch";
+    const char* pszTimestamp = "Newsthump 2018/06/23 Everything is proceeding exactly as I have foreseen, explains wise Brexit sage";
     const CScript genesisOutputScript = CScript() << ParseHex("04f03572f9a1acbc0f81781de9f6bd5f424dc877d2a93496d7d9dde0536959553c910fbfcc6307aa5c74cd77d35cc4f395ef4482be21ab1202a5758c7ca2804c89") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -148,7 +152,7 @@ public:
         nDefaultPort = 9937;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(TZERO, 924727, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(TZERO, GNONCE, 0x1e0ffff0, 1, 50 * COIN);
         //genesis = mineGenesisBlock(TZERO, NBITS_G, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -156,8 +160,8 @@ public:
         // std::cout << "Gh:" << consensus.hashGenesisBlock.GetHex() << std::endl;
         // std::cout << "GM:" << genesis.hashMerkleRoot.GetHex() << std::endl;
         // std::cout << "N:" << genesis.nNonce << std::endl;
-        assert(consensus.hashGenesisBlock == uint256S("08ccdfeb12136edad13ad133e691765ee027097ba718cb377f3db9291a671993"));
-        assert(genesis.hashMerkleRoot == uint256S("01e25b502c6c1248b8b677e523c7ab7b29f74075ff7abc2ba4779a228c01ff09"));
+        assert(consensus.hashGenesisBlock == uint256S("0xb6afeb67d20139a7fb74efe4dac9de413a1a02744212424c0372ae3ebea9da5b"));
+        assert(genesis.hashMerkleRoot == uint256S("0xec261227371939c72816229afd9667abb834af7bd8b5e8f3f6bbc6a5304cb00a"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         // vSeeds.emplace_back("seed-a.litecoin.loshan.co.uk", true);
@@ -242,13 +246,13 @@ public:
         nDefaultPort = 19335;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(TZERO, 924727, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(TZERO, GNONCE, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         // std::cout << "GH:" << genesis.GetHash().GetHex() << std::endl;
         // std::cout << "GM:" << genesis.hashMerkleRoot.GetHex() << std::endl;
-        assert(consensus.hashGenesisBlock == uint256S("08ccdfeb12136edad13ad133e691765ee027097ba718cb377f3db9291a671993"));
-        assert(genesis.hashMerkleRoot == uint256S("0x01e25b502c6c1248b8b677e523c7ab7b29f74075ff7abc2ba4779a228c01ff09"));
+        assert(consensus.hashGenesisBlock == uint256S("0xb6afeb67d20139a7fb74efe4dac9de413a1a02744212424c0372ae3ebea9da5b"));
+        assert(genesis.hashMerkleRoot == uint256S("0xec261227371939c72816229afd9667abb834af7bd8b5e8f3f6bbc6a5304cb00a"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
